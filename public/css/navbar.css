@@ -1,0 +1,33 @@
+body{
+    background-color: red;
+    height: 2000px;
+}
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+header{
+    background-size: cover;
+    height: 600px;
+}
+
+.container-General{
+    padding:0;
+}
+
+.navBar{
+   text-align: center;
+   padding-top: 2%;
+   margin-bottom: 9%;
+}
+
+.a{
+    background-color: white;
+    text-align: center;
+    height: 1000px;
+    color: black;
+}

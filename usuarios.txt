@@ -1,0 +1,7 @@
+// Cuenta comprador
+{"id":1144624567,"nickname":"TESTSXCISHPG","password":"qatest7731","site_status":"active","email":"test_user_20799162@testuser.com"}
+
+// Cuenta Vendedor
+{"id":1144625562,"nickname":"TESTBVEMHT4J","password":"qatest1398","site_status":"active","email":"test_user_8960024@testuser.com"}
+
+
