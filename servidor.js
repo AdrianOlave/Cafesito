@@ -12,7 +12,8 @@ const PORT = process.env.PORT || 5050
 const homeRouter = require('./routes/homeRoute')
 const serviceRouter = require('./routes/serviceRouter')
 const responseRouter = require('./routes/responseRouter')
-
+const { Server: IOServer } = require('socket.io')
+const io = new IOServer(httpServer)
 
 
 dotenv.config();
@@ -27,6 +28,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', homeRouter);
 app.use('/service', serviceRouter);
 app.use('/response', responseRouter);
+
+app.use('/login', (req, res) => {
+    res.render("login")
+});
+
+app.use('/register', (req, res) => {
+    res.render("register")
+});
+
+io.on('connection',(socket) => {
+    console.log('Un cliente se ha conectado')
+    socket.on('message', data => console.log(data))
+})
+
 
 
 

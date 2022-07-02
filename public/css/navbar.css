@@ -1,33 +1,114 @@
-body{
-    background-color: red;
-    height: 2000px;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+body {
+  font-family: 'Poppins', sans-serif;
 }
 
-header{
-    background-size: cover;
-    height: 600px;
+header {
+  background-size: cover;
+  height: 600px;
 }
 
-.container-General{
-    padding:0;
+.container-General {
+  padding: 0;
+  background-color: #212529;
+  min-height: 100vh;
 }
 
-.navBar{
-   text-align: center;
-   padding-top: 2%;
-   margin-bottom: 9%;
+.navBar {
+  text-align: center;
+  padding-top: 2%;
+  margin-bottom: 9%;
 }
 
-.a{
-    background-color: white;
-    text-align: center;
-    height: 1000px;
-    color: black;
+.a {
+  background-color: white;
+  text-align: center;
+  height: 1000px;
+  color: black;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.logo {
+  color: white;
+  padding: 2% 0;
+  text-align: center;
+  font-size: 30px;
+}
+
+.login-container {
+  background-color: whitesmoke;
+  border-radius: 15px;
+  width: 40%;
+  color: black;
+  padding: 30px;
+  margin: 40px auto;
+}
+
+.login-container input,
+.login-container button {
+  margin-bottom: 10px;
+}
+
+.card-container {
+  margin-bottom: 10px;
+}
+
+.card-container:last-child {
+  margin-bottom: 0;
+}
+
+.input,
+.button {
+  width: 100%;
+  height: 30px;
+}
+
+.input {
+  border: none;
+  background-color: #00000015;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+.button {
+  border: none;
+  background-color: #4c54d2;
+  color: white;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+.comprate-label {
+  color: red;
+  text-decoration: underline;
+}
+
+.grid {
+  display: flex;
+  gap: 15px;
+  flex-flow: wrap;
+}
+.card {
+  flex: 1;
+}
+
+.image-descriptor {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .input,
+  .button {
+    font-size: 18px;
+  }
+
+  .login-container {
+    width: 80%;
+  }
 }
