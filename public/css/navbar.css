@@ -7,6 +7,11 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+.stop-scroll {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
 
 header {
   background-size: cover;
@@ -17,6 +22,7 @@ header {
   padding: 0;
   background-color: #212529;
   min-height: 100vh;
+  z-index: 2;
 }
 
 .navBar {
@@ -102,6 +108,77 @@ header {
   font-size: 20px;
 }
 
+.overlay {
+  height: 100vh;
+  background-color: #87878780;
+  position: fixed;
+  width: 100%;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.overlay.open {
+  pointer-events: all;
+  opacity: 1;
+}
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.modal-content {
+  width: fit-content;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px 8px rgb(0 0 0 / 50%);
+  min-width: 70%;
+  max-width: 60%;
+  display: flex;
+}
+.modal-content > * {
+  flex: 1;
+}
+.first-content {
+  flex: 0.5;
+}
+.right-modal-part > * {
+  margin-top: 10px;
+}
+.right-modal-part > *:first-child {
+  margin-top: 0px;
+}
+
+.image {
+  margin: 0 auto;
+  display: block;
+}
+
+.buy-cart {
+  font-weight: bold;
+  vertical-align: middle;
+}
+.add-button {
+  color: #4c54d2;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  vertical-align: middle;
+  font-size: 35px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+.add-button:hover {
+  color: #4c54d2cc;
+}
+
+.footer {
+  background-color: #212529ee;
+  border-top: 1px solid #4c54d2;
+}
+
 @media screen and (max-width: 1000px) {
   .input,
   .button {
@@ -111,4 +188,37 @@ header {
   .login-container {
     width: 80%;
   }
+}
+
+@media screen and (max-width: 600px) {
+  .modal-content {
+    flex-direction: column;
+    max-width: 90%;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 200, 'opsz' 48;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: none;
+  scrollbar-color: #797979 #212529;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 14px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #212529;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 10px;
+  border: 3px solid #212529;
 }

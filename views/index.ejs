@@ -10,37 +10,73 @@
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/navbar.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="css/navbar.css" />
 
     <title>Home</title>
   </head>
-  <body>
-    <div class="container-General">
+
+  <body class="coso">
+    <div id="modal" class="overlay">
+      <div class="modal">
+        <div id="modal-block" class="modal-content">
+          <div class="first-content">
+            <img
+              class="image"
+              src="https://www.nespresso.com/ecom/medias/sys_master/public/15064878022686/C-0892-plp-image-318px318px.png?impolicy=product&imwidth=150"
+            />
+          </div>
+
+          <div class="right-modal-part">
+            <h2 class="">Nombre Cafe</h2>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatem optio illo obcaecati iste commodi laudantium numquam
+              aperiam officia, omnis, perspiciatis sequi architecto perferendis
+              similique iure facilis asperiores eveniet voluptatibus enim?
+            </p>
+
+            <div class="buy-section">
+              <span class="buy-cart">Agregar al Carrito</span>
+              <button class="material-symbols-outlined add-button">
+                add_circle
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="main" class="container-General">
       <h2 class="logo">CAFECITO</h2>
 
       <div class="login-container card-container">
         <h1 class="title">Nespresso</h1>
 
         <div class="grid">
-          <button class="card">
+          <button class="card" data-name="coso">
             <img
               src="https://www.nespresso.com/ecom/medias/sys_master/public/15064878022686/C-0892-plp-image-318px318px.png?impolicy=product&imwidth=150"
             />
             <p class="image-descriptor">Capsulita</p>
           </button>
-          <button class="card">
+          <button class="card" data-name="coso">
             <img
               src="https://www.nespresso.com/ecom/medias/sys_master/public/15064878022686/C-0892-plp-image-318px318px.png?impolicy=product&imwidth=150"
             />
             <p class="image-descriptor">Capsulita</p>
           </button>
-          <button class="card">
+          <button class="card" data-name="coso">
             <img
               src="https://www.nespresso.com/ecom/medias/sys_master/public/15064878022686/C-0892-plp-image-318px318px.png?impolicy=product&imwidth=150"
             />
             <p class="image-descriptor">Capsulita</p>
           </button>
-          <button class="card">
+          <button class="card" data-name="coso">
             <img
               src="https://www.nespresso.com/ecom/medias/sys_master/public/15064878022686/C-0892-plp-image-318px318px.png?impolicy=product&imwidth=150"
             />
@@ -49,43 +85,70 @@
         </div>
       </div>
 
-      
       <div class="login-container card-container">
         <h1 class="title">Nespresso</h1>
 
         <div class="grid">
-          <button class="card">
+          <button class="card" data-name="coso">
             <img
               src="https://www.nespresso.com/ecom/medias/sys_master/public/15064878022686/C-0892-plp-image-318px318px.png?impolicy=product&imwidth=150"
             />
             <p class="image-descriptor">Capsulita</p>
           </button>
-          <button class="card">
+          <button class="card" data-name="coso">
             <img
               src="https://www.nespresso.com/ecom/medias/sys_master/public/15064878022686/C-0892-plp-image-318px318px.png?impolicy=product&imwidth=150"
             />
             <p class="image-descriptor">Capsulita</p>
           </button>
-          <button class="card">
+          <button class="card" data-name="coso">
             <img
               src="https://www.nespresso.com/ecom/medias/sys_master/public/15064878022686/C-0892-plp-image-318px318px.png?impolicy=product&imwidth=150"
             />
             <p class="image-descriptor">Capsulita</p>
           </button>
-          <button class="card">
+          <button class="card" data-name="coso">
             <img
               src="https://www.nespresso.com/ecom/medias/sys_master/public/15064878022686/C-0892-plp-image-318px318px.png?impolicy=product&imwidth=150"
             />
             <p class="image-descriptor">Capsulita</p>
           </button>
         </div>
+      </div>
     </div>
-    
+
     <div class="footer">
-      <hr>
-      <br>
-      <br>
-      <br>
+      <br />
+      <br />
+      <br />
     </div>
   </body>
+
+  <script lang="javascript">
+    const cardButtons = document.querySelectorAll('[data-name="coso"]');
+    const modal = document.getElementById("modal")
+    const modalBlock = document.getElementById("modal-block")
+    const generalContainer = document.getElementById("main")
+    const body = document.body
+
+    const openModal = () => {
+      body.className = "stop-scroll"
+      modal.className = "overlay open"
+      generalContainer.style.filter = "blur(1px)"
+      generalContainer.style.paddingRight = "14px"
+    }
+    const closeModal = () => {
+      modal.className = "overlay"
+      body.className = ""
+      generalContainer.style.filter = "none"
+      generalContainer.style.paddingRight = "0"
+    }
+
+    modal.addEventListener("click", closeModal)
+    modalBlock.addEventListener("click", (event) => event.stopPropagation())
+
+    cardButtons.forEach(cardButton => {
+      cardButton.addEventListener("click", openModal)
+    })
+  </script>
 </html>
