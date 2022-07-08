@@ -66,9 +66,16 @@ header {
 .card-container {
   margin-bottom: 10px;
 }
-
+.card-container.right {
+  width: 100%;
+}
 .card-container:last-child {
   margin-bottom: 0;
+}
+
+.navigator {
+  display: flex;
+  justify-content: space-between;
 }
 
 .input,
@@ -100,6 +107,9 @@ header {
   gap: 15px;
   flex-flow: wrap;
 }
+.grid.column {
+  flex-direction: column;
+}
 .card {
   flex: 1;
 }
@@ -128,6 +138,11 @@ header {
   align-items: center;
   height: 100%;
 }
+.modal.right {
+  justify-content: end;
+  align-items: auto;
+}
+
 .modal-content {
   width: fit-content;
   padding: 20px;
@@ -137,6 +152,13 @@ header {
   min-width: 70%;
   max-width: 60%;
   display: flex;
+}
+.modal-content.right {
+  border-radius: 0;
+  height: 100%;
+  min-width: 40%;
+  display: block;
+  overflow-y: scroll;
 }
 .modal-content > * {
   flex: 1;
@@ -199,6 +221,40 @@ header {
 
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 200, 'opsz' 48;
+}
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+.button-left {
+  margin-left: 2%;
+  width: fit-content;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 50%;
+  padding: 10px;
+  height: fit-content;
+}
+.button-left:hover {
+  background-color: #4c54d2cc;
+}
+
+.button-right {
+  margin-right: 2%;
+  width: fit-content;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 50%;
+  padding: 10px;
+  height: fit-content;
+}
+.button-right:hover {
+  background-color: #4c54d2cc;
 }
 
 /* ===== Scrollbar CSS ===== */
