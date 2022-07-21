@@ -12,6 +12,7 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <Arduino_JSON.h>
+#include <SocketIoClient.h>
 
 const char* ssid = "SwordArtOnline2.4";
 const char* password = "Casa7831711";
